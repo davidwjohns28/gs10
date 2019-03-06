@@ -1,0 +1,49 @@
+﻿@model gs10.Models.Applicant
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@*<h2>Search</h2>*@
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="form-horizontal">
+        <h3>Search Passport Information</h3>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TeamID, "Team", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.ValidationMessageFor(Model => Model.SelectedOptionID)*@
+
+
+
+                @Html.DropDownList("TeamID")
+                @*@Html.DropDownList("TeamID", String.Empty)*@
+                @Html.ValidationMessageFor(x => x.TeamID)
+            </div>
+        </div>
+
+  
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

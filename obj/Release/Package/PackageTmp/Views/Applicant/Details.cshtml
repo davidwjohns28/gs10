@@ -1,0 +1,339 @@
+﻿@model gs10.Models.Applicant
+
+@{
+    ViewBag.Title = "Details";
+    var teamName = string.Empty;
+    
+    if (Model.Team.TeamID > 0)
+    {
+    switch (Model.Team.TeamID)
+    {
+       case 1:
+         teamName = string.Empty;
+         break;
+       case 2:
+        teamName = "Team 1";
+        break;
+      case 3:
+       teamName = "Team 2";
+       break;
+      case 4:
+       teamName = "Team 3";
+       break;
+    }    
+ }
+
+}
+
+<div>
+    <h3>Application Details</h3>
+	<hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            Status
+        </dt>
+
+        <dd>
+            @if (Model.Submitted == true)
+            {
+                <div class='submitted'>Submitted</div>
+            }
+            else
+            {
+                <div class="notsubmitted">Not Submitted</div>
+            }
+        </dd>
+
+        <dt>
+            Year
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            Team
+        </dt>
+
+        <dd>
+            @teamName
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MiddleName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreferredName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreferredName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            State
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State.StateName)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZipCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZipCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HomePhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HomePhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CellPhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CellPhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PassportNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PassportNumber)
+        </dd>
+
+        <dt>
+            Passport Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameOnPassport)
+        </dd>
+
+        <dt>
+            Emergency Contact #1
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyContactOneName)
+        </dd>
+
+        <dt>
+            Contact #1 Phone No.
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyContactOnePhoneNumber)
+        </dd>
+
+        <dt>
+            Emergency Contact #2
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyContactTwoName)
+        </dd>
+
+        <dt>
+            Contact #2 Phone No.
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyContactTwoPhoneNumber)
+        </dd>
+
+        <dt>
+            Health Issues
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HealthIssues)
+        </dd>
+
+        <dt>
+            Medications
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Medications)
+        </dd>
+
+        <dt>
+            Job Title/Position
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Role.RoleName)
+        </dd>
+
+        <dt>
+            Other Specialty
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoleInformation)
+        </dd>
+
+       <dt>
+           Spanish Level
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpanishLevel.SpanishLevelName)
+        </dd>
+
+        <dt>
+            Room Preference
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomShare.RoomShareName)
+        </dd>
+
+        <dt>
+            Requested Roommate
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomMateRequest)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.USDepartureAirline)*@
+            Airline-Dep. from U.S.
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USDepartureAirline)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.USDepartureFlightNumber)*@
+            Flight No.
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USDepartureFlightNumber)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.USDeparture)*@
+            Dep. Date/Time
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USDeparture)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.GuatemalaArrival)*@
+            Arrival Date/Time
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuatemalaArrival)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.GuatemalaReturnAirline)*@
+            Return Airline
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuatemalaReturnAirline)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.GuatemalaReturnFlightNumber)*@
+            Return Light No.
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuatemalaReturnFlightNumber)
+        </dd>
+
+        <dt>
+            Return Date/Time
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuatemalaReturn)
+        </dd>
+        <dt>
+           Comments/Other Information
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = ViewBag.Encryption.Encrypt(Model.ApplicantID.ToString()) }) |
+    @Html.ActionLink("Go to Summary", "Index", new { @id = -1 })
+</p>

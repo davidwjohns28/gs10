@@ -1,0 +1,146 @@
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\gs10.dll.config
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\gs10.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\gs10.pdb
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Antlr3.Runtime.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\EntityFramework.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\EntityFramework.SqlServer.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.Owin.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.Owin.Security.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.Owin.Security.Google.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.Web.Infrastructure.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Newtonsoft.Json.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Owin.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\System.Web.Helpers.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\System.Web.Mvc.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\System.Web.Optimization.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\System.Web.Razor.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\System.Web.WebPages.Deployment.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\System.Web.WebPages.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\System.Web.WebPages.Razor.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\WebGrease.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\System.Web.Helpers.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\System.Web.Mvc.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\System.Web.Optimization.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\System.Web.Razor.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\System.Web.WebPages.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\System.Web.WebPages.Deployment.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\System.Web.WebPages.Razor.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Newtonsoft.Json.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Antlr3.Runtime.pdb
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\EntityFramework.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\EntityFramework.SqlServer.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.Owin.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.Owin.Security.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.Owin.Security.Google.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\obj\Debug\gs10.csprojResolveAssemblyReference.cache
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\obj\Debug\gs10.dll
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\obj\Debug\gs10.pdb
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\obj\Debug\gs10.Migrations.Migration1.resources
+c:\users\soju\documents\visual studio 2013\Projects\gs10\gs10\obj\Debug\gs10.csproj.GenerateResource.Cache
+C:\Users\soju\documents\visual studio 2013\Projects\gs10\gs10\obj\Debug\gs10.Migrations.Migration2.resources
+C:\Users\soju\documents\visual studio 2013\Projects\gs10\gs10\obj\Debug\gs10.Migrations.Migration3.resources
+C:\Users\soju\documents\visual studio 2013\Projects\gs10\gs10\obj\Debug\gs10.Migrations.Migration4.resources
+C:\Users\soju\documents\visual studio 2013\Projects\gs10\gs10\obj\Debug\gs10.Migrations.Migration5.resources
+C:\Users\soju\documents\visual studio 2013\Projects\gs10\gs10\obj\Debug\gs10.Migrations.Migration6.resources
+C:\Users\soju\Documents\Visual Studio 2013\Projects\gs10\gs10\obj\Debug\gs10.Migrations.Migration7.resources
+C:\Users\soju\documents\visual studio 2013\Projects\gs10\gs10\obj\Debug\gs10.Migrations.Migration8.resources
+C:\Users\soju\documents\visual studio 2013\Projects\gs10\gs10\obj\Debug\gs10.Migrations.Migration9.resources
+C:\Users\soju\documents\visual studio 2013\Projects\gs10\gs10\obj\Debug\gs10.Migrations.Migration10.resources
+C:\Users\soju\documents\visual studio 2013\Projects\gs10\gs10\obj\Debug\gs10.Migrations.Migration11.resources
+C:\Users\soju\documents\visual studio 2013\Projects\gs10\gs10\obj\Debug\gs10.Migrations.Migration12.resources
+C:\Users\soju\documents\visual studio 2013\Projects\gs10\gs10\obj\Debug\gs10.Migrations.Migration13.resources
+C:\Users\soju\documents\visual studio 2013\Projects\gs10\gs10\obj\Debug\gs10.Migrations.Migration14.resources
+C:\Users\soju\documents\visual studio 2013\Projects\gs10\gs10\obj\Debug\gs10.Migrations.Migration15.resources
+C:\Users\soju\documents\visual studio 2013\Projects\gs10\gs10\obj\Debug\gs10.Migrations.Migration16.resources
+C:\Azure\gs10\gs10\bin\gs10.dll.config
+C:\Azure\gs10\gs10\bin\gs10.dll
+C:\Azure\gs10\gs10\bin\gs10.pdb
+C:\Azure\gs10\gs10\bin\Antlr3.Runtime.dll
+C:\Azure\gs10\gs10\bin\EntityFramework.dll
+C:\Azure\gs10\gs10\bin\EntityFramework.SqlServer.dll
+C:\Azure\gs10\gs10\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Azure\gs10\gs10\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Azure\gs10\gs10\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Azure\gs10\gs10\bin\Microsoft.Owin.dll
+C:\Azure\gs10\gs10\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Azure\gs10\gs10\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Azure\gs10\gs10\bin\Microsoft.Owin.Security.dll
+C:\Azure\gs10\gs10\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Azure\gs10\gs10\bin\Microsoft.Owin.Security.Google.dll
+C:\Azure\gs10\gs10\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Azure\gs10\gs10\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Azure\gs10\gs10\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Azure\gs10\gs10\bin\Microsoft.Web.Infrastructure.dll
+C:\Azure\gs10\gs10\bin\Newtonsoft.Json.dll
+C:\Azure\gs10\gs10\bin\Owin.dll
+C:\Azure\gs10\gs10\bin\System.Web.Helpers.dll
+C:\Azure\gs10\gs10\bin\System.Web.Mvc.dll
+C:\Azure\gs10\gs10\bin\System.Web.Optimization.dll
+C:\Azure\gs10\gs10\bin\System.Web.Razor.dll
+C:\Azure\gs10\gs10\bin\System.Web.WebPages.Deployment.dll
+C:\Azure\gs10\gs10\bin\System.Web.WebPages.dll
+C:\Azure\gs10\gs10\bin\System.Web.WebPages.Razor.dll
+C:\Azure\gs10\gs10\bin\WebGrease.dll
+C:\Azure\gs10\gs10\bin\System.Web.Helpers.xml
+C:\Azure\gs10\gs10\bin\System.Web.Mvc.xml
+C:\Azure\gs10\gs10\bin\System.Web.Optimization.xml
+C:\Azure\gs10\gs10\bin\System.Web.Razor.xml
+C:\Azure\gs10\gs10\bin\System.Web.WebPages.xml
+C:\Azure\gs10\gs10\bin\System.Web.WebPages.Deployment.xml
+C:\Azure\gs10\gs10\bin\System.Web.WebPages.Razor.xml
+C:\Azure\gs10\gs10\bin\Newtonsoft.Json.xml
+C:\Azure\gs10\gs10\bin\Antlr3.Runtime.pdb
+C:\Azure\gs10\gs10\bin\EntityFramework.xml
+C:\Azure\gs10\gs10\bin\EntityFramework.SqlServer.xml
+C:\Azure\gs10\gs10\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Azure\gs10\gs10\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Azure\gs10\gs10\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Azure\gs10\gs10\bin\Microsoft.Owin.xml
+C:\Azure\gs10\gs10\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Azure\gs10\gs10\bin\Microsoft.Owin.Security.xml
+C:\Azure\gs10\gs10\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Azure\gs10\gs10\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Azure\gs10\gs10\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Azure\gs10\gs10\bin\Microsoft.Owin.Security.Google.xml
+C:\Azure\gs10\gs10\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Azure\gs10\gs10\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Azure\gs10\gs10\obj\Debug\gs10.csprojAssemblyReference.cache
+C:\Azure\gs10\gs10\obj\Debug\gs10.Migrations.Migration1.resources
+C:\Azure\gs10\gs10\obj\Debug\gs10.Migrations.Migration2.resources
+C:\Azure\gs10\gs10\obj\Debug\gs10.Migrations.Migration3.resources
+C:\Azure\gs10\gs10\obj\Debug\gs10.Migrations.Migration4.resources
+C:\Azure\gs10\gs10\obj\Debug\gs10.Migrations.Migration5.resources
+C:\Azure\gs10\gs10\obj\Debug\gs10.Migrations.Migration6.resources
+C:\Azure\gs10\gs10\obj\Debug\gs10.Migrations.Migration7.resources
+C:\Azure\gs10\gs10\obj\Debug\gs10.Migrations.Migration8.resources
+C:\Azure\gs10\gs10\obj\Debug\gs10.Migrations.Migration9.resources
+C:\Azure\gs10\gs10\obj\Debug\gs10.Migrations.Migration10.resources
+C:\Azure\gs10\gs10\obj\Debug\gs10.Migrations.Migration11.resources
+C:\Azure\gs10\gs10\obj\Debug\gs10.Migrations.Migration12.resources
+C:\Azure\gs10\gs10\obj\Debug\gs10.Migrations.Migration13.resources
+C:\Azure\gs10\gs10\obj\Debug\gs10.Migrations.Migration14.resources
+C:\Azure\gs10\gs10\obj\Debug\gs10.Migrations.Migration15.resources
+C:\Azure\gs10\gs10\obj\Debug\gs10.Migrations.Migration16.resources
+C:\Azure\gs10\gs10\obj\Debug\gs10.csproj.GenerateResource.cache
+C:\Azure\gs10\gs10\obj\Debug\gs10.csproj.CoreCompileInputs.cache
+C:\Azure\gs10\gs10\obj\Debug\gs10.csproj.CopyComplete
+C:\Azure\gs10\gs10\obj\Debug\gs10.dll
+C:\Azure\gs10\gs10\obj\Debug\gs10.pdb

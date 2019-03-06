@@ -1,0 +1,325 @@
+﻿@model gs10.Models.Applicant
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+@*<h2>Delete</h2>*@
+
+<h3>Delete Application</h3>
+<div>
+    <h4>Are you sure you want to delete this?</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            Status
+        </dt>
+
+        <dd>
+            @if (Model.Submitted == true)
+            {
+                <div class='submitted'>Submitted</div>
+            }
+            else
+            {
+                <div class="notsubmitted">Not Submitted</div>
+            }
+        </dd>
+
+        <dt>
+            Team
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Team.TeamName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Role.RoleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Role.RoleName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomShare.RoomShareName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomShare.RoomShareName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpanishLevel.SpanishLevelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpanishLevel.SpanishLevelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State.StateName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State.StateName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Team.TeamName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Team.TeamName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MiddleName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreferredName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreferredName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZipCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZipCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HomePhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HomePhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CellPhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CellPhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PassportNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PassportNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameOnPassport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameOnPassport)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmergencyContactOneName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyContactOneName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmergencyContactOnePhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyContactOnePhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmergencyContactTwoName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyContactTwoName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmergencyContactTwoPhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyContactTwoPhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HealthIssues)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HealthIssues)
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.Medications)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoleInformation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoleInformation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomMateRequest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomMateRequest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USDepartureAirline)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USDepartureAirline)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USDepartureFlightNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USDepartureFlightNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USDeparture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USDeparture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuatemalaArrival)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuatemalaArrival)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuatemalaReturnAirline)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuatemalaReturnAirline)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuatemalaReturnFlightNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuatemalaReturnFlightNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuatemalaReturn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuatemalaReturn)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" />
+            @*<input type="button" title="Delete" value="Delete" class="btn btn-default" onclick="location.href='@Url.Action("Delete", "Applicant", new { id = ViewBag.Encryption.Encrypt(@Model.ApplicantID.ToString()) })'" />*@
+            @Html.ActionLink("Go to Summary", "Index", new { @id = -1 })
+        </div>
+    }
+</div>

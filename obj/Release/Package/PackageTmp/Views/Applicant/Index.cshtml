@@ -1,0 +1,126 @@
+﻿@model IEnumerable<gs10.Models.Applicant>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Application Summary</h3>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <td>
+            <h4>@ViewBag.TeamName</h4>
+        </td>
+    </tr>
+
+    <tr>
+        <th nowrap>
+            Year
+        </th>
+        <th nowrap>
+           Status
+        </th>
+        <th nowrap>
+            Team
+        </th>
+        <th nowrap>
+           Name
+        </th>
+
+      
+  
+    </tr>
+
+@foreach (var item in Model)
+{
+    var teamName = string.Empty;
+
+    if (item.TeamID > 0)
+    {
+        switch (item.TeamID)
+        {
+            case 1:
+                teamName = string.Empty;
+                break;
+            case 2:
+                teamName = "Team 1";
+                break;
+            case 3:
+                teamName = "Team 2";
+                break;
+            case 4:
+                teamName = "Team 3";
+                break;
+        }
+                
+        teamName = item.Team.TeamName.Substring(0, 6);
+        //ViewBag.teamName = teamName;
+    }
+    
+    <tr>
+        <td nowrap>
+            @Html.DisplayFor(modelItem => item.Year)
+        <td>
+            @if (item.Submitted.Equals(true))
+            {
+                <div class="submitted">Submitted</div>
+            }
+            else
+            {
+                <div class="notsubmitted">Not Submitted</div>
+            }
+        </td>
+
+
+
+
+        @*<td nowrap>
+            @Html.DisplayFor(modelItem => item.Team.TeamName)
+        </td>*@
+
+  
+
+        @*<td nowrap>
+            @Html.DisplayFor(modelItem => item.Team.TeamName)
+        </td>*@
+
+        <td nowrap>
+            @teamName
+        </td>
+
+
+
+        <td nowrap>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+
+        <td>
+            @*@if (! ViewBag.ReadOnly)
+            {                                                                
+               @Html.ActionLink("Details", "Details", new { id = ViewBag.Encryption.Encrypt(item.ApplicantID.ToString()) }) 
+            }
+            else
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = ViewBag.Encryption.Encrypt(item.ApplicantID.ToString())})             
+                @Html.Raw(" | ");                                           
+                @Html.ActionLink("Details", "Details", new { id = ViewBag.Encryption.Encrypt(item.ApplicantID.ToString()) })
+                @Html.Raw(" | ");   
+                @Html.ActionLink("Delete", "Delete", new { id = ViewBag.Encryption.Encrypt(item.ApplicantID.ToString()) })
+            }*@
+            
+            @Html.ActionLink("Edit", "Edit", new { id = ViewBag.Encryption.Encrypt(item.ApplicantID.ToString()) }) |                                                                                    
+            @Html.ActionLink("Details", "Details", new { id = ViewBag.Encryption.Encrypt(item.ApplicantID.ToString()) }) |
+            @Html.ActionLink("Delete", "Delete", new { id = ViewBag.Encryption.Encrypt(item.ApplicantID.ToString()) })
+        </td>
+    </tr>
+}
+
+
+</table>
+}
