@@ -20,17 +20,10 @@
         <div class="form-group">
             @Html.LabelFor(model => model.TeamID, "Team", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @*@Html.ValidationMessageFor(Model => Model.SelectedOptionID)*@
-
-
-
                 @Html.DropDownList("TeamID")
-                @*@Html.DropDownList("TeamID", String.Empty)*@
                 @Html.ValidationMessageFor(x => x.TeamID)
             </div>
         </div>
-
-  
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

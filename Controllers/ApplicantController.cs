@@ -4,13 +4,9 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using gs10.Models;
 using Microsoft.AspNet.Identity;
-using System.IO;
-using System.Security.Cryptography;
-using System.Text;
 using gs10.Apps;
 
 namespace gs10.Controllers
@@ -30,8 +26,8 @@ namespace gs10.Controllers
                 var year = applicant2.Year;
                 var teamID = applicant2.TeamID;
                 var teamName = string.Empty;
-                // if coming from search page
 
+                // if coming from search page
                 switch (teamID)
                 {
                     case 1:
@@ -51,25 +47,12 @@ namespace gs10.Controllers
                 if (year != null || teamID != null)
                 {
                     List<Applicant> applicantList = new List<Applicant>();
-
-
-
                     var teams = db.Teams.Find(teamID);
                     ViewBag.TeamName = teamName;
-                    //if (teamID.Value == 1)
-                    //{
-                    //    ViewBag.TeamName = "All Teams";
-                    //}
-                    //else
-                    //{
-                    //    ViewBag.TeamName = teams.TeamName;
-                    //}
 
                     // All Years abd Any Team
                     if (year == "0" && teamID == 1)
                     {
-                        //applicantList = db.Applicants.ToList();
-                        //applicantList = db.Applicants.OrderBy(x => x.LastName).ThenBy(x => x.FirstName).ToList();
                         applicantList = db.Applicants.OrderBy(x => x.Year).ThenBy(x => x.LastName).ThenBy(x => x.FirstName).ToList();
                     }
                     // Specific Year and Any Team
@@ -93,15 +76,6 @@ namespace gs10.Controllers
                         applicant.PassportNumber = encryption.Decrypt(applicant.PassportNumber);
                     }
                     ViewBag.UserMode = "Edit";
-                    //if (year != currentYear)
-                    //{
-                    //    ViewBag.ReadOnly = true;
-                    //}
-                    //else
-                    //{
-                    //    ViewBag.ReadOnly = false;
-                    //}
-                    //return View(applicantList.OrderBy(b => b.LastName));
                     return View(applicantList.OrderBy(x => x.Year).ThenBy(x => x.LastName).ThenBy(x => x.FirstName).ToList());
                 }
             
@@ -111,7 +85,6 @@ namespace gs10.Controllers
             else
             {
                 string userID = User.Identity.GetUserId();
-                //var applicants = db.Applicants.Where(b => b.UserId.Equals(userID));
                 var applicants = db.Applicants.Where(b => b.UserId.Equals(userID) && b.Year.Equals(currentYear));
 
                 foreach (Applicant applicant in applicants)
@@ -181,38 +154,6 @@ namespace gs10.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            
-
-            //ViewBag.Encryption = encryption;
-            //id = encryption.Decrypt(id);
-
-            //bool result = Int32.TryParse(id, out ApplicationID);
-
-            //if (Int32.TryParse(id, out ApplicationID))
-            //{
-            //    Applicant applicant = db.Applicants.Find(ApplicationID);
-            //    if (applicant != null)
-            //    {
-            //        applicant.PassportNumber = encryption.Decrypt(applicant.PassportNumber);
-            //        return View(applicant);
-            //    }
-            //    else
-            //    {
-            //        return HttpNotFound();
-            //    }
-            //}
-            //else
-            //{
-            //    return HttpNotFound();
-            //}
-
-            //Applicant applicant = db.Applicants.Find(ApplicationID);
-            //if (applicant == null)
-            //{
-            //    return HttpNotFound();
-            //}
-            //applicant.PassportNumber = encryption.Decrypt(applicant.PassportNumber);
-            //return View(applicant);
         }
 
         // GET: /Applicant/Create
@@ -227,12 +168,11 @@ namespace gs10.Controllers
         }
 
         // POST: /Applicant/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ApplicantID,UserId,Year,FirstName,MiddleName,LastName,PreferredName,Address1,Address2,City,StateID,ZipCode,Email,HomePhoneNumber,CellPhoneNumber,PassportNumber,NameOnPassport,EmergencyContactOneName,EmergencyContactOnePhoneNumber,EmergencyContactTwoName,EmergencyContactTwoPhoneNumber,HealthIssues,RoleID,RoleInformation,TeamID,SpanishLevelID,RoomShareID,RoomMateRequest,USDepartureAirline,USDepartureFlightNumber,GuatemalaArrivalDateTime,GuatemalaReturnAirline,GuatemalaReturnFlightNumber,GuatemalaReturnDateTime,Comments,Medications")] Applicant applicant)
-        //ApplicantID,UserId,Year,FirstName,MiddleName,LastName,PreferredName,Address1,Address2,City,StateID,ZipCode,Email,HomePhoneNumber,CellPhoneNumber,PassportNumber,NameOnPassport,EmergencyContactOneName,EmergencyContactOnePhoneNumber,EmergencyContactTwoName,EmergencyContactTwoPhoneNumber,HealthIssues,RoleID,RoleInformation,TeamID,SpanishLevelID,RoomShareID,RoomMateRequest,USDepartureAirline,USDepartureFlightNumber,USDepartureDateTime,GuatemalaArrivalDateTime,GuatemalaReturnAirline,GuatemalaReturnFlightNumber,GuatemalaReturnDateTime,Comments,Medications")] Applicant applicant)  
         {
             if (ModelState.IsValid)
             {
@@ -276,7 +216,6 @@ namespace gs10.Controllers
                 }
 
                 db.Applicants.Add(applicant);
-                //db.Entry(applicant).State = EntityState.;
                 db.SaveChanges();
                 ViewBag.UserMode = "Edit";
                 return RedirectToAction("Index/-1");
@@ -291,7 +230,6 @@ namespace gs10.Controllers
         }
 
         // GET: /Applicant/Edit/5
-        //public ActionResult Edit(int? id)
         public ActionResult Edit(string id)
         {
             int applicationID;
@@ -332,34 +270,14 @@ namespace gs10.Controllers
         }
 
         // POST: /Applicant/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        //public ActionResult Edit([Bind(Include = "ApplicantID,UserId,Year,FirstName,MiddleName,LastName,PreferredName,Address1,Address2,City,StateID,ZipCode,Email,HomePhoneNumber,CellPhoneNumber,PassportNumber,NameOnPassport,EmergencyContactOneName,EmergencyContactOnePhoneNumber,EmergencyContactTwoName,EmergencyContactTwoPhoneNumber,HealthIssues,RoleID,RoleInformation,TeamID,SpanishLevelID,RoomShareID,RoomMateRequest,USDepartureAirline,USDepartureFlightNumber,USDeparture,USDepartureDateTime,GuatemalaArrivalDateTime,GuatemalaReturnAirline,GuatemalaReturnFlightNumber,GuatemalaReturnDateTime,Comments,Medications")] Applicant applicant)
         public ActionResult Edit([Bind(Include = "ApplicantID,UserId,Year,FirstName,MiddleName,LastName,PreferredName,Address1,Address2,City,StateID,ZipCode,Email,HomePhoneNumber,CellPhoneNumber,PassportNumber,NameOnPassport,EmergencyContactOneName,EmergencyContactOnePhoneNumber,EmergencyContactTwoName,EmergencyContactTwoPhoneNumber,HealthIssues,RoleID,RoleInformation,TeamID,SpanishLevelID,RoomShareID,RoomMateRequest,USDepartureAirline,USDepartureFlightNumber,GuatemalaReturnAirline,GuatemalaReturnFlightNumber,GuatemalaReturn,Comments,Medications")] Applicant applicant)
         {
             if (ModelState.IsValid)
             {
-                //////////////////////////
-                //DateTime day = fromDateValue.
-                //do for valid date
-                //DateTime myDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
-
-                //var datequery =
-                //                db.WhatsOns.Where(c => c.start > myDate)
-                //                .OrderByDescending(c => c.start)
-                //                .GroupBy(c => c.start).AsEnumerable().Select(
-                //                sGroup => new WhatsOn
-                //                {
-                //                    day = sGroup.Key,
-                //                    whtscount = sGroup.Count()
-                //                });
-                //////////////////////////////////////////////////////
-                //@Html.HiddenFor(model => model.ApplicantID)
-                //string userID = Request["USDeparture"];
-
-                //applicant.UserId = User.Identity.GetUserId();
                 applicant.PassportNumber = encryption.Encrypt(applicant.PassportNumber);
 
                 string usDeparture = Request["USDeparture"];
@@ -401,23 +319,11 @@ namespace gs10.Controllers
                     applicant.GuatemalaReturnDateTime = null;
                 }
 
-                //applicant.Year = currentYear;
                 applicant.Year = originalYear;
                 db.Entry(applicant).State = EntityState.Modified;
                 db.SaveChanges();
-                //applicant.GuatemalaArrivalDateTime = GuatemalaArrivalDateTime;
-                //db.Entry(applicant).State = EntityState.Modified;
-                //db.SaveChanges();
-
-
-                return RedirectToAction("Index", new { @id = -1 });
-
-                //DateTime newDate = DateTime.TryParseExact(applicant.GuatemalaArrivalDateTime, "mm/yy/dd", CultureInfo.InvariantCulture);
-                //DateTime result result;
-                //DateTime newDate = DateTime.TryParse(applicant.GuatemalaArrivalDateTime, result);
-                //return RedirectToAction("Index");
-
-
+               
+                return RedirectToAction("Index", new { @id = -1 });          
             }
             ViewBag.RoleID = new SelectList(db.Roles, "RoleID", "RoleName", applicant.RoleID);
             ViewBag.RoomShareID = new SelectList(db.RoomShares, "RoomShareID", "RoomShareName", applicant.RoomShareID);
@@ -497,22 +403,6 @@ namespace gs10.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-
-
-            //string applicantID = encryption.Decrypt(id);
-            //int appID;
-
-            //bool result = Int32.TryParse(applicantID, out appID);
-
-            ////Applicant applicant = db.Applicants.Find(id);
-            //Applicant applicant = db.Applicants.Find(appID);
-            //if (applicant == null)
-            //{
-            //    return HttpNotFound();
-            //}
-            //applicant.PassportNumber = encryption.Decrypt(applicant.PassportNumber);
-            //return View(applicant);
         }
 
         // POST: /Applicant/Delete/5
@@ -557,11 +447,6 @@ namespace gs10.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            //Applicant applicant = db.Applicants.Find(id);
-            //db.Applicants.Remove(applicant);
-            //db.SaveChanges();
-            //return RedirectToAction("Index", "Home");
         }
 
 
@@ -578,55 +463,11 @@ namespace gs10.Controllers
         {
             var teamID = applicant.TeamID;
             return RedirectToAction("PassportData/" + encryption.Encrypt(teamID.ToString()));
-            //}
-            //return View("PassportData");
         }
 
         // GET: /Applicant/
         public ActionResult PassportData(string id)
         {
-            //   id = encryption.Decrypt(id);
-
-            //    if (Int32.TryParse(id, out applicationID))
-            //    {
-            //        Applicant applicant = db.Applicants.Find(applicationID);
-            //        if (applicant != null)
-            //        {
-            //            applicant.Submitted = true;
-            //            db.Entry(applicant).State = EntityState.Modified;
-            //            db.SaveChanges();
-            //            ViewBag.UserMode = "Edit";
-            //            ViewBag.Encryption = encryption;
-            //            return RedirectToAction("Index/-1");
-            //        }
-            //        else
-            //        {
-            //            return HttpNotFound();
-            //        }
-            //    }
-            //    else
-            //    {
-            //        return HttpNotFound();
-            //    }
-            //}
-            //else
-            //{
-            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            //}
-
-
-
-
-
-            //List<Applicant> applicantList = new List<Applicant>();
-            //var applicants = db.Applicants;
-
-            //string applicantID = encryption.Decrypt(id);
-            //int appID;
-
-            //bool result = Int32.TryParse(applicantID, out appID);
-
-            ////////////////////////
             int teamID;
 
             if (id != null)
@@ -647,7 +488,6 @@ namespace gs10.Controllers
                         ViewBag.TeamName = teams.TeamName;
                     }
 
-                    //var applicants = db.Applicants.Where(b => b.TeamID.Value.Equals(id.Value) && b.NameOnPassport != null);
                     if (teamID == 1)
                     {
                         applicantList = db.Applicants.ToList();
@@ -671,26 +511,6 @@ namespace gs10.Controllers
                     {
                         return RedirectToAction("Index", "Home");
                     }
-
-
-                    //Applicant applicant = db.Applicants.Find(teamID);
-                    //if (applicant != null)
-                    //{
-                    //    db.Applicants.Remove(applicant);
-                    //    db.SaveChanges();
-                    //    if (User.IsInRole("Admin"))
-                    //    {
-                    //        return RedirectToAction("Index", new { @id = -1 });
-                    //    }
-                    //    else
-                    //    {
-                    //        return RedirectToAction("Index", "Home");
-                    //    }
-                    //}
-                    //else
-                    //{
-                    //    return HttpNotFound();
-                    //}
                 }
                 else
                 {
@@ -701,103 +521,7 @@ namespace gs10.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-
-            ////////////////////////
-
-            //var teams = db.Teams.Find(appID);
-            //if (appID == 1)
-            //{
-            //    ViewBag.TeamName = "All Teams";
-            //}
-            //else
-            //{
-            //    ViewBag.TeamName = teams.TeamName;
-            //}
-
-            ////var applicants = db.Applicants.Where(b => b.TeamID.Value.Equals(id.Value) && b.NameOnPassport != null);
-            //if (appID == 1)
-            //{
-            //    applicantList = db.Applicants.ToList();
-            //}
-            //else
-            //{
-            //    applicantList = db.Applicants.Where(b => b.TeamID.Value.Equals(appID)).ToList();
-            //}
-
-            //foreach (Applicant applicant in applicantList)
-            //{
-            //    applicant.PassportNumber = encryption.Decrypt(applicant.PassportNumber);
-            //}
-
-
-            //if (applicantList.Count > 0)
-            //{
-            //    return View(applicantList.OrderBy(b => b.LastName));
-            //}
-            //else
-            //{
-            //    return RedirectToAction("Index", "Home");
-            //}
-
         }
-
-        //private string Encrypt(string clearText)
-        //{
-        //    if (clearText != null)
-        //    {
-        //        byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
-
-        //        using (Aes encryptor = Aes.Create())
-        //        {
-        //            //Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
-        //            Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(encryptionKey, salt);
-        //            encryptor.Key = pdb.GetBytes(32);
-        //            encryptor.IV = pdb.GetBytes(16);
-
-        //            using (MemoryStream ms = new MemoryStream())
-        //            {
-        //                using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write))
-        //                {
-        //                    cs.Write(clearBytes, 0, clearBytes.Length);
-        //                    cs.Close();
-        //                }
-        //                clearText = Convert.ToBase64String(ms.ToArray());
-        //            }
-        //        }
-        //    }
-        //    return clearText;
-        //}
-
-        //private string Decrypt(string cipherText)
-        //{
-        //    if (cipherText != null)
-        //    {
-        //        //string EncryptionKey = "MAKV2SPBNI99212";
-
-        //        byte[] cipherBytes = Convert.FromBase64String(cipherText);
-
-        //        using (Aes encryptor = Aes.Create())
-        //        {
-        //            //Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(encryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
-        //            Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(encryptionKey, salt);
-        //            encryptor.Key = pdb.GetBytes(32);
-        //            encryptor.IV = pdb.GetBytes(16);
-
-        //            using (MemoryStream ms = new MemoryStream())
-        //            {
-        //                using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateDecryptor(), CryptoStreamMode.Write))
-        //                {
-        //                    cs.Write(cipherBytes, 0, cipherBytes.Length);
-        //                    cs.Close();
-        //                }
-        //                cipherText = Encoding.Unicode.GetString(ms.ToArray());
-        //            }
-        //        }
-        //    }
-        //    return cipherText;
-
-        //}
 
         protected override void Dispose(bool disposing)
         {

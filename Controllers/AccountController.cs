@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
@@ -12,7 +8,6 @@ using gs10.Models;
 
 namespace gs10.Controllers
 {
-    //[Authorize]
     public class AccountController : Controller
     {
         public AccountController()
@@ -27,10 +22,8 @@ namespace gs10.Controllers
 
         public UserManager<ApplicationUser> UserManager { get; private set; }
 
-        //
         // GET: /Account/Login
         [AllowAnonymous]
-        //public ActionResult Login(string returnUrl)
         public ActionResult Login(string returnUrl, ManageMessageId? message)
         {
             ViewBag.ReturnUrl = returnUrl;
@@ -46,7 +39,6 @@ namespace gs10.Controllers
             return View();
         }
 
-        //
         // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
@@ -58,19 +50,6 @@ namespace gs10.Controllers
                 var user = await UserManager.FindAsync(model.UserName, model.Password);
                 if (user != null)
                 {
-                    ////////////////////////////////
-                    //ApplicationDbContext db = new ApplicationDbContext();
-                    //string userID = User.Identity.GetUserId();
-                    //var applicants = db.Applicants.Where(b => b.UserId.Equals(userID));
-                    //if (applicants.ToList().Count > 0)
-                    //{
-                    //    TempData["UserMode"] = "Edit";
-                    //}
-                    //else
-                    //{
-                    //    TempData["UserMode"] = "Create";
-                    //}
-                    ///////////////////////////////
                     await SignInAsync(user, model.RememberMe);
                     return RedirectToLocal(returnUrl);
                 }
@@ -84,7 +63,6 @@ namespace gs10.Controllers
             return View(model);
         }
 
-        //
         // GET: /Account/Register
         [AllowAnonymous]
         public ActionResult Register()
@@ -92,7 +70,6 @@ namespace gs10.Controllers
             return View();
         }
 
-        //
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
@@ -119,7 +96,6 @@ namespace gs10.Controllers
             return View(model);
         }
 
-        //
         // POST: /Account/Disassociate
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -152,7 +128,6 @@ namespace gs10.Controllers
             return View();
         }
 
-        //
         // POST: /Account/Manage
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -206,19 +181,10 @@ namespace gs10.Controllers
         // GET: /Account/NewPassword
         public ActionResult NewPassword(ManageMessageId? message)
         {
-            //ViewBag.StatusMessage =
-            //     message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
-            //     : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
-            //     : message == ManageMessageId.RemoveLoginSuccess ? "The external login was removed."
-            //     : message == ManageMessageId.Error ? "An error has occurred."
-            //     : "";
-            //ViewBag.HasLocalPassword = HasPassword();
-            //ViewBag.ReturnUrl = Url.Action("Manage");
             ViewBag.Title = "Change Password";
             return View();
         }
 
-        //
         // POST: /Account/NewPassword
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -242,7 +208,6 @@ namespace gs10.Controllers
             }
         }
 
-        //
         // POST: /Account/ExternalLogin
         [HttpPost]
         [AllowAnonymous]
@@ -280,7 +245,6 @@ namespace gs10.Controllers
             }
         }
 
-        //
         // POST: /Account/LinkLogin
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -290,7 +254,6 @@ namespace gs10.Controllers
             return new ChallengeResult(provider, Url.Action("LinkLoginCallback", "Account"), User.Identity.GetUserId());
         }
 
-        //
         // GET: /Account/LinkLoginCallback
         public async Task<ActionResult> LinkLoginCallback()
         {
@@ -307,7 +270,6 @@ namespace gs10.Controllers
             return RedirectToAction("Manage", new { Message = ManageMessageId.Error });
         }
 
-        //
         // POST: /Account/ExternalLoginConfirmation
         [HttpPost]
         [AllowAnonymous]
@@ -345,7 +307,6 @@ namespace gs10.Controllers
             return View(model);
         }
 
-        //
         // POST: /Account/LogOff
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -355,7 +316,6 @@ namespace gs10.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        //
         // GET: /Account/ExternalLoginFailure
         [AllowAnonymous]
         public ActionResult ExternalLoginFailure()

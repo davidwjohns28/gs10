@@ -9,69 +9,49 @@
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
-    <div class="form-horizontal">
-        <h3>Search Applications</h3>
-        <hr />
-        @Html.ValidationSummary(true)
-
-
-      
-        
-            @{
-            var domainsList = new SelectList(new[]
-            {
-                new SelectListItem { Text = "All Years", Value = "0", Selected = true },
-                new SelectListItem { Text = "2015", Value = "2015"},
-                new SelectListItem { Text = "2016", Value = "2016"},
-                new SelectListItem { Text = "2017", Value = "2017"},
-                new SelectListItem { Text = "2018", Value = "2018"},
-                new SelectListItem { Text = "2019", Value = "2019"},
-            }, "Value", "Text");
-            }
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.DropDownList("Year", domainsList)
-            </div>
+<div class="form-horizontal">
+    <h3>Search Applications</h3>
+    <hr />
+    @Html.ValidationSummary(true)
+    @{
+        var domainsList = new SelectList(new[]
+        {
+        new SelectListItem { Text = "All Years", Value = "0", Selected = true },
+        new SelectListItem { Text = "2015", Value = "2015"},
+        new SelectListItem { Text = "2016", Value = "2016"},
+        new SelectListItem { Text = "2017", Value = "2017"},
+        new SelectListItem { Text = "2018", Value = "2018"},
+        new SelectListItem { Text = "2019", Value = "2019"},
+    }, "Value", "Text");
+    }
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.DropDownList("Year", domainsList)
         </div>
+    </div>
 
-        @{
-    var teamList = new SelectList(new[]
-            {
-                //new SelectListItem { Text = "All Years", Value = "0", Selected = true },
-                new SelectListItem { Text = "All Teams", Value = "1"},
-                new SelectListItem { Text = "Team 1", Value = "2"},
-                new SelectListItem { Text = "Team 2", Value = "3"},
-                new SelectListItem { Text = "Team 3", Value = "4"},
-            }, "Value", "Text");
-        }
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.DropDownList("TeamID", teamList)
-            </div>
+    @{
+        var teamList = new SelectList(new[]
+                {
+        new SelectListItem { Text = "All Teams", Value = "1"},
+        new SelectListItem { Text = "Team 1", Value = "2"},
+        new SelectListItem { Text = "Team 2", Value = "3"},
+        new SelectListItem { Text = "Team 3", Value = "4"},
+    }, "Value", "Text");
+    }
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.DropDownList("TeamID", teamList)
         </div>
-   
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.TeamID, "")
-            <div class="col-md-10">
-                @Html.DropDownList("TeamID")
-                @Html.ValidationMessageFor(x => x.TeamID)
-            </div>
-        </div>*@
+    </div>
 
-
-
-
-            <div class="form-group">
-                <div class="col-md-10">
-                    <input type="submit" value="Search" class="btn btn-default" />
-                </div>
-            </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <input type="submit" value="Search" class="btn btn-default" />
         </div>
+    </div>
+</div>
 }
-
-@*<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>*@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

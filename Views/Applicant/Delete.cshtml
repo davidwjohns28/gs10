@@ -318,7 +318,6 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" />
-            @*<input type="button" title="Delete" value="Delete" class="btn btn-default" onclick="location.href='@Url.Action("Delete", "Applicant", new { id = ViewBag.Encryption.Encrypt(@Model.ApplicantID.ToString()) })'" />*@
             @Html.ActionLink("Go to Summary", "Index", new { @id = -1 })
         </div>
     }

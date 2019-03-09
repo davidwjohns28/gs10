@@ -9,9 +9,6 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-@*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
 <table class="table">
     <tr>
         <td>
@@ -32,9 +29,6 @@
         <th nowrap>
            Name
         </th>
-
-      
-  
     </tr>
 
 @foreach (var item in Model)
@@ -60,7 +54,6 @@
         }
                 
         teamName = item.Team.TeamName.Substring(0, 6);
-        //ViewBag.teamName = teamName;
     }
     
     <tr>
@@ -77,19 +70,6 @@
             }
         </td>
 
-
-
-
-        @*<td nowrap>
-            @Html.DisplayFor(modelItem => item.Team.TeamName)
-        </td>*@
-
-  
-
-        @*<td nowrap>
-            @Html.DisplayFor(modelItem => item.Team.TeamName)
-        </td>*@
-
         <td nowrap>
             @teamName
         </td>
@@ -101,26 +81,11 @@
         </td>
 
         <td>
-            @*@if (! ViewBag.ReadOnly)
-            {                                                                
-               @Html.ActionLink("Details", "Details", new { id = ViewBag.Encryption.Encrypt(item.ApplicantID.ToString()) }) 
-            }
-            else
-            {
-                @Html.ActionLink("Edit", "Edit", new { id = ViewBag.Encryption.Encrypt(item.ApplicantID.ToString())})             
-                @Html.Raw(" | ");                                           
-                @Html.ActionLink("Details", "Details", new { id = ViewBag.Encryption.Encrypt(item.ApplicantID.ToString()) })
-                @Html.Raw(" | ");   
-                @Html.ActionLink("Delete", "Delete", new { id = ViewBag.Encryption.Encrypt(item.ApplicantID.ToString()) })
-            }*@
-            
             @Html.ActionLink("Edit", "Edit", new { id = ViewBag.Encryption.Encrypt(item.ApplicantID.ToString()) }) |                                                                                    
             @Html.ActionLink("Details", "Details", new { id = ViewBag.Encryption.Encrypt(item.ApplicantID.ToString()) }) |
             @Html.ActionLink("Delete", "Delete", new { id = ViewBag.Encryption.Encrypt(item.ApplicantID.ToString()) })
         </td>
     </tr>
 }
-
-
 </table>
 }

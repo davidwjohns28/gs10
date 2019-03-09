@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
-using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace gs10.Models
 {
@@ -16,22 +14,11 @@ namespace gs10.Models
         {
         }
 
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-        //}
-
-
         public System.Data.Entity.DbSet<gs10.Models.Applicant> Applicants { get; set; }
-
         public System.Data.Entity.DbSet<gs10.Models.Role> Roles { get; set; }
-
         public System.Data.Entity.DbSet<gs10.Models.Team> Teams { get; set; }
-
         public System.Data.Entity.DbSet<gs10.Models.State> States { get; set; }
-
         public System.Data.Entity.DbSet<gs10.Models.SpanishLevel> SpanishLevels { get; set; }
-
         public System.Data.Entity.DbSet<gs10.Models.RoomShare> RoomShares { get; set; }
     }
 }

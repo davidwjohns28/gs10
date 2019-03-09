@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Web.Mvc;
@@ -130,8 +127,6 @@ namespace gs10.Models
         [StringLength(50, ErrorMessage = "Requested Roommate Name cannot be longer than 50 characters.")]
         public string RoomMateRequest { get; set; }
         
-        ////////////////////////////////////////////////////////////////////////////////////////////////
-        // U.S. DEPARTURE
         [Display(Name = "Departure Airline (from U.S.)", Order = 29)]
         [StringLength(50, ErrorMessage = "Airline Name cannot be longer than 50 characters.")]
         public string USDepartureAirline { get; set; }
@@ -152,8 +147,7 @@ namespace gs10.Models
                 return String.Format("{0:MM/dd/yyyy hh:mm tt}", USDepartureDateTime);  
             }
         }
-       /////////////////////////////////////////////////////////////////////////////////
-        // GUATEMALA ARRIVAL
+  
         public DateTime? GuatemalaArrivalDateTime { get; set; }
 
         [StringLength(30, ErrorMessage = "Arrival Date/Time cannot be longer than 30 characters.")]
@@ -166,8 +160,7 @@ namespace gs10.Models
                 return String.Format("{0:MM/dd/yyyy hh:mm tt}", GuatemalaArrivalDateTime);
             }
         }
-        /////////////////////////////////////////////////////////////////////
-        // GUATEMALA DEPARTURE
+      
         [Display(Name = "Return Airline (from Guatemala)", Order = 33)]
         [StringLength(50, ErrorMessage = "Airline Name cannot be longer than 50 characters.")]
         public string GuatemalaReturnAirline { get; set; }
@@ -188,7 +181,6 @@ namespace gs10.Models
                 return String.Format("{0:MM/dd/yyyy hh:mm tt}", GuatemalaReturnDateTime);
             }
         }
-        /////////////////////////////////////////////////////////////////////
 
         [Display(Name = "Other Information/Comments", Order = 36)]
         [StringLength(500, ErrorMessage = "Comments cannot be longer than 500 characters.")]
@@ -219,49 +211,3 @@ namespace gs10.Models
         public virtual RoomShare RoomShare { get; set; }
     }
 }
-
-//public class MyAwesomeDateValidation : ValidationAttribute
-//{
-//    public override bool IsValid(object value)
-//    {
-//        DateTime dt;
-//        bool parsed = DateTime.TryParse((string)value, out dt);
-//        if (!parsed)
-//            return false;
-
-//        // eliminate other invalid values, etc
-//        // if contains valid hour for your business logic, etc
-
-//        return true;
-//    }
-//}
-
-//public class AfterTodayAttribute : ValidationAttribute
-//{
-//    public AfterTodayAttribute()
-//    {
-//    }
-
-//    //Tried this as well...same result
-//    //protected override ValidationResult IsValid(object value, ValidationContext validationContext)
-//    //{
-//    //    return base.IsValid(value, validationContext);
-//    //}
-
-//    public override bool IsValid(object value)
-//    {
-//        //value is already a DateTime and set to DateTime.Max
-//        var valid = false; // for testing only
-//        return valid;
-//    }
-//}
-
-//public class DateTimeValidation : RegularExpressionAttribute
-//{
-//    public DateTimeValidation()
-//        : base(@"^((((31\/(0?[13578]|1[02]))|((29|30)\/(0?[1,3-9]|1[0-2])))\/(1[6-9]|[2-9]\d)?\d{2})|(29\/0?2\/(((1[6-9]|[2-9]\d)?(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))|(0?[1-9]|1\d|2[0-8])\/((0?[1-9])|(1[0-2]))\/((1[6-9]|[2-9]\d)?\d{2})) (20|21|22|23|[0-1]?\d):[0-5]?\d$")
-//    {
-//        ErrorMessage = "Date must be in the format of : dd/mm/yyyy hh:mm";
-//    }
-//}
-
